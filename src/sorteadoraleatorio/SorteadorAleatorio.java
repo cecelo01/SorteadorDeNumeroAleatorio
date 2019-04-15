@@ -37,29 +37,33 @@ public class SorteadorAleatorio extends javax.swing.JFrame {
         jbtSortear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Sorteador De Números");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setLocation(new java.awt.Point(0, 0));
+        setType(java.awt.Window.Type.POPUP);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Sorteador Aleatório");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 6, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel2.setText("Valor Inicial: ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 63, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
         jLabel3.setText("Valor Final: ");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 101, -1, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
 
         jLabel4.setText("Digite na caixa os valores respectivos para o sorteio.");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, -1));
 
         jSValorInicial.setModel(new javax.swing.SpinnerNumberModel(1, null, null, 1));
-        getContentPane().add(jSValorInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 63, 105, -1));
+        getContentPane().add(jSValorInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 70, 105, -1));
 
         jSValorFinal.setModel(new javax.swing.SpinnerNumberModel(10, null, null, 1));
-        getContentPane().add(jSValorFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 97, 105, -1));
+        getContentPane().add(jSValorFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 100, 105, -1));
 
         jlbVariavel.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         jlbVariavel.setForeground(new java.awt.Color(255, 0, 51));
@@ -72,9 +76,10 @@ public class SorteadorAleatorio extends javax.swing.JFrame {
                 jbtSortearActionPerformed(evt);
             }
         });
-        getContentPane().add(jbtSortear, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        getContentPane().add(jbtSortear, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtSortearActionPerformed
