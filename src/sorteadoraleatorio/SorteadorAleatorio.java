@@ -28,32 +28,64 @@ public class SorteadorAleatorio extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jSValorInicial = new javax.swing.JSpinner();
+        jSValorFinal = new javax.swing.JSpinner();
+        jlbVariavel = new javax.swing.JLabel();
+        jbtSortear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Sorteador Aleatório");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(84, 6, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(109, 109, 109)
-                .addComponent(jLabel1)
-                .addContainerGap(121, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(270, Short.MAX_VALUE))
-        );
+        jLabel2.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel2.setText("Valor Inicial: ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 63, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel3.setText("Valor Final: ");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(48, 101, -1, -1));
+
+        jLabel4.setText("Digite na caixa os valores respectivos para o sorteio.");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, -1, -1));
+
+        jSValorInicial.setModel(new javax.swing.SpinnerNumberModel(1, null, null, 1));
+        getContentPane().add(jSValorInicial, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 63, 105, -1));
+
+        jSValorFinal.setModel(new javax.swing.SpinnerNumberModel(10, null, null, 1));
+        getContentPane().add(jSValorFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 97, 105, -1));
+
+        jlbVariavel.setFont(new java.awt.Font("sansserif", 1, 18)); // NOI18N
+        jlbVariavel.setForeground(new java.awt.Color(255, 0, 51));
+        jlbVariavel.setText("     ");
+        getContentPane().add(jlbVariavel, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+
+        jbtSortear.setText("Sortear");
+        jbtSortear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtSortearActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jbtSortear, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtSortearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtSortearActionPerformed
+        
+        double aleatorio = Math.random();
+        
+        int sorteioAleatorio = (int) ((int) jSValorFinal.getValue() + aleatorio * ((int) jSValorInicial.getValue() - (int) jSValorFinal.getValue()));
+        
+        jlbVariavel.setText("O número sorteado é: "+sorteioAleatorio);
+
+    }//GEN-LAST:event_jbtSortearActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,5 +124,12 @@ public class SorteadorAleatorio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JSpinner jSValorFinal;
+    private javax.swing.JSpinner jSValorInicial;
+    private javax.swing.JButton jbtSortear;
+    private javax.swing.JLabel jlbVariavel;
     // End of variables declaration//GEN-END:variables
 }
